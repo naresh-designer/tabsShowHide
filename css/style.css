@@ -1,0 +1,82 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Alkatra&family=Montserrat:wght@100;400&family=Open+Sans:wght@300&family=Poppins:wght@200;400&family=Rajdhani:wght@300&family=Roboto+Condensed:wght@300&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+section{
+    width: 65%;
+    margin: 100px auto 0;
+}
+
+.tab{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
+.tab li{
+    font-size: 25px;
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+}
+
+.tab li::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    width: 100%;
+    height: 3px;
+    transition: .5s ;
+    transform: scale(0);
+}
+
+.tab li:hover:after,.tab li.active:after{
+    transform: scale(1);
+    width: 100%;
+}
+.container{
+    position: relative;
+}
+.content.active{
+    display: block;
+    animation: fade .5s ease-in-out;
+}
+@keyframes fade{
+    from{
+        scale: 0.7;
+    }
+    to{
+        scale: 1;
+    }
+}
+.content{
+    width: 100%;
+    height: 500px;
+    background-color: aquamarine;
+    padding: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+.content:first-child{
+    background-color: blanchedalmond;
+}
+.content:last-child{
+    background-color: blue;
+}
+
+.content h2{
+    font-size: 40px;
+}
